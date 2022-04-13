@@ -5,9 +5,10 @@
 <form action="/" method="post">
     <p><%= homeEjsContent %></p>
 
-    <% posts.forEach(function(posts) { %>
-    <%  console.log(posts); %>
-    <%})%>
+    <% posts.forEach(function(post){ %>
+    <h1><%= post.title %></h1>
+    <p><%= post.text %></p>
+    <% }); %>    
 
 </form>
 
