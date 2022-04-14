@@ -1,14 +1,16 @@
 <%- include ("partials/header.ejs") %>
 
-<h1>Home</h1>
-
 <form action="/" method="post">
+
+    <h1>Blog Post Homepage</h1>
     <p><%= homeEjsContent %></p>
 
     <% posts.forEach(function(post){ %>
     <h1><%= post.title %></h1>
-    <p><%= post.text.substring(0,100) + " ..." %></p>
-    <% }); %>    
+    <p><%= post.text.substring(0,175) + " ..." %>
+        <a href="/post/<%=post.title %>">Read More</a>
+    </p>
+    <% }); %>
 
 </form>
 
