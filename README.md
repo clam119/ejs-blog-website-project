@@ -1,5 +1,7 @@
 # Hi, Thank You For Checking Out This Mini Project - EJS Blog Website Project
 
+Heroku Deployment Link: https://ejs-blog-clam119.herokuapp.com/
+
 ## About This Project:
 
 What the application does: This is a blog website that allows the user to navigate over to "Create A Post" and input the post's title & text.
