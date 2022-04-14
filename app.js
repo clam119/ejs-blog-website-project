@@ -21,10 +21,24 @@ app.use(express.static("public"));
 app.get('/', function (req, res) {
   res.render('home', {
     homeEjsContent: homeStartingContent,
-    posts:posts
+    posts:posts,
   });
 });
 
+app.get('/post/:postName', function(req, res) {
+
+  const requestedTitle = req.params.postName;
+  
+  posts.forEach(function(post) {
+    const storedTitle = post.title;
+    if (requestedTitle === storedTitle) {
+      console.log("Match Found")
+    } else {
+      console.log("Match Not Found");
+    }
+  })
+ 
+});
 
 app.get('/about', function (req, res) {
   res.render('about', {
