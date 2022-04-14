@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 app.use(express.static("public"));
 
 app.get('/', function (req, res) {
@@ -31,12 +32,16 @@ app.get('/post/:postName', function (req, res) {
   let requestedTitle = _.lowerCase(req.params.postName);
 
   posts.forEach(function (post) {
-    let storedTitle = _.lowerCase(post.title);
 
-    if (requestedTitle == storedTitle) {
-      console.log("Match Found")
-    } else {
-      console.log("Match Not Found");
+    let storedTitle = _.lowerCase(post.title);
+    let postTitle = post.title;
+    let postText = post.text;
+
+    if (storedTitle === requestedTitle) {
+      res.render('post', {
+        postTitle: postTitle,
+        postText: postText,
+      });
     }
   })
 
